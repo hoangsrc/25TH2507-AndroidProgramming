@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         String strTong = String.valueOf(Tong); //Chuyển đầu vào sang dạng chuỗi
 
         //Hiện ra màn hình kết quả
-        editTextKetQua.setText(strTong);
-
+        editTextKetQua.setText(strTong);    
     }
 }
