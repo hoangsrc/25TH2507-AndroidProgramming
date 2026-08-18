@@ -64,25 +64,29 @@
             android:layout_marginHorizontal="2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+"/>
+            android:text="+"
+            android:onClick="xuLyCong"/>
         <Button
             android:id="@+id/btnTru"
             android:layout_marginHorizontal="2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"/>
+            android:text="-"
+            android:onClick="xuLyTru"/>
         <Button
             android:id="@+id/btnNhan"
             android:layout_marginHorizontal="2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="*"/>
+            android:text="*"
+            android:onClick="xuLyNhan"/>
         <Button
-            android:id="@+id/Chia"
+            android:id="@+id/btnChia"
             android:layout_marginHorizontal="2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="/"/>
+            android:text="/"
+            android:onClick="xuLyChia"/>
 
     </LinearLayout>
 
