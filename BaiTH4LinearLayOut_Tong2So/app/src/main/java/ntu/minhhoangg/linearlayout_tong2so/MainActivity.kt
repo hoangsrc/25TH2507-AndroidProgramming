@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity() {
             insets
 
         }
-
     }
 
     //Xử Lý Cộng

@@ -112,5 +112,4 @@
             android:textSize="12dp"
             android:enabled="false"/>
     </LinearLayout>
-
 </LinearLayout>
