@@ -13,7 +13,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-
     // Khai báo các biến toàn cục
     EditText editTextSo1, editTextSo2;
     TextView editTextKQ;
@@ -23,20 +22,18 @@ public class MainActivity extends AppCompatActivity {
         editTextSo1 = findViewById(R.id.edtSo1);
         editTextSo2 = findViewById(R.id.edtSo2);
         editTextKQ = findViewById(R.id.edtKetQua);
-
         nutCong = findViewById(R.id.btnCong);
         nutTru = findViewById(R.id.btnTru);
         nutNhan = findViewById(R.id.btnNhan);
         nutChia = findViewById(R.id.btnChia);
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         timDieuKhien();
-        //gắn bộ lắng nghe sự kiện và code xử lý cho từng nút
+        //gắn bộ lắng nghe sự kiện. Sau đó sẽ code xử lý cho từng nút ở phía dưới
         nutCong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,11 +60,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 XULY_CHIA();
             }
-        });
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
         });
     }
 
