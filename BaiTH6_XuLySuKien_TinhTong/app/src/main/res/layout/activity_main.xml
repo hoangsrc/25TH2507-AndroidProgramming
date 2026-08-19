@@ -22,10 +22,8 @@
             android:textColor="#987"/>
         <EditText
             android:id="@+id/edtSo1"
-            android:layout_marginBottom="4.5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Mời nhập vào chữ số tại đây"
             android:textSize="12dp"/>
     </LinearLayout>
 
@@ -40,18 +38,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Số thứ hai"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textColor="#987"/>
         <EditText
             android:id="@+id/edtSo2"
             android:layout_marginBottom="4.5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Mời nhập vào chữ số tại đây"
             android:textSize="12dp"/>
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginVertical="23.4dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -61,56 +59,47 @@
 
         <Button
             android:id="@+id/btnCong"
-            android:layout_marginHorizontal="2dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+"
-            android:onClick="xuLyCong"/>
+            android:layout_width="55dp"
+            android:layout_height="94dp"
+            android:layout_marginHorizontal="15dp"
+            android:text="+" />
         <Button
             android:id="@+id/btnTru"
-            android:layout_marginHorizontal="2dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:onClick="xuLyTru"/>
+            android:layout_marginHorizontal="15dp"
+            android:layout_width="55dp"
+            android:layout_height="94dp"
+            android:text="-"/>
         <Button
             android:id="@+id/btnNhan"
-            android:layout_marginHorizontal="2dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="*"
-            android:onClick="xuLyNhan"/>
+            android:layout_marginHorizontal="15dp"
+            android:layout_width="55dp"
+            android:layout_height="94dp"
+            android:text="*"/>
         <Button
             android:id="@+id/btnChia"
-            android:layout_marginHorizontal="2dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="/"
-            android:onClick="xuLyChia"/>
+            android:layout_marginHorizontal="15dp"
+            android:layout_width="55dp"
+            android:layout_height="94dp"
+            android:text="/"/>
 
     </LinearLayout>
 
     <LinearLayout
+        android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:padding="6dp"
-        android:layout_marginTop="15dp"
         android:layout_height="50dp">
+
         <TextView
-            android:paddingRight="11dp"
+            android:background="#E6A6B9"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:id="@+id/tvKetQua"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kết quả là"
-            android:textSize="18dp"
-            android:textColor="#987"/>
-        <EditText
-            android:id="@+id/edtKetQua"
-            android:layout_marginBottom="4.5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nơi hiện kết quả"
-            android:textSize="12dp"
-            android:enabled="false"/>
+            android:gravity="center"
+            android:hint="Kết quả" />
     </LinearLayout>
 
 </LinearLayout>

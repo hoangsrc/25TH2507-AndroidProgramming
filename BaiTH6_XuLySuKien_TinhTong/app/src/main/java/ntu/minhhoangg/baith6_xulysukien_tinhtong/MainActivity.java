@@ -24,27 +24,42 @@ public class MainActivity extends AppCompatActivity {
         buttonCong.setOnClickListener(boLangNgheVaXuLyCong);
         buttonTru.setOnClickListener(boLangNgheVaXuLyTru);
         buttonNhan.setOnClickListener(boLangNgheVaXuLyNhan);
-        //buttonChia.setOnClickListener(boLangNgheVaXuLyChia);
-            //Ví dụ bộ lắng nghe ẩn danh
-                buttonChia.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //Code xử lý Cộng
-                        //b1. Lấy số 1, 2
-                        String strSo1 = edtSoA.getText().toString();
-                        String strSo2 = edtSoB.getText().toString();
-                        //b1. Chuyển thành số để tính toán
-                        double soA = Double.parseDouble(strSo1);
-                        double soB = Double.parseDouble(strSo2);
-                        //b3. Tính toán
-                        double chia = soA / soB;
-                        //b4. Xuất kết quả
-                        String strKQ = String.valueOf(chia);
-                        edtKQ.setText(strKQ);
-                    }
-                });
+        buttonChia.setOnClickListener(boLangNgheVaXuLyChia);
+//            //Ví dụ bộ lắng nghe ẩn danh cho xu ly chia
+//                buttonChia.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        //Code xử lý Cộng
+//                        //b1. Lấy số 1, 2
+//                        String strSo1 = edtSoA.getText().toString();
+//                        String strSo2 = edtSoB.getText().toString();
+//                        //b2. Chuyển thành số để tính toán
+//                        double soA = Double.parseDouble(strSo1);
+//                        double soB = Double.parseDouble(strSo2);
+//                        //b3. Tính toán
+//                        double chia = soA / soB;
+//                        //b4. Xuất kết quả
+//                        String strKQ = String.valueOf(chia);
+//                        tvKQ.setText(strKQ);
+//                    }
+//                });
     }
-    //----------------------------------------------------//
+    //-------------------------------------------------------------------------//
+    //Khai báo các đối tượng tương ứng với các điều khiển (view) cần thao tác. Sau sẽ gắn vào TimView
+    EditText edtSoA;
+    EditText edtSoB;
+    Button buttonCong, buttonTru, buttonNhan, buttonChia;
+    TextView tvKQ;
+    public void TimView() {
+        edtSoA = (EditText) findViewById(R.id.edtSo1);
+        edtSoB = (EditText) findViewById(R.id.edtSo2);
+        buttonCong = (Button) findViewById(R.id.btnCong);
+        buttonTru = (Button) findViewById(R.id.btnTru);
+        buttonNhan = (Button) findViewById(R.id.btnNhan);
+        buttonChia = (Button) findViewById(R.id.btnChia);
+        tvKQ = (TextView) findViewById(R.id.tvKetQua);
+    }
+    //-------------------------------------------------------------------------//
     //Tạo các bộ lắng ghe và xử lý sự Kiện
     View.OnClickListener boLangNgheVaXuLyCong = new View.OnClickListener() {
         @Override
@@ -60,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             double tong = soA + soB;
             //b4. Xuất kết quả
             String strKQ = String.valueOf(tong);
-            edtKQ.setText(strKQ);
+            tvKQ.setText(strKQ);
         }
     };
     View.OnClickListener boLangNgheVaXuLyTru = new View.OnClickListener() {
@@ -77,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             double Tru = soA - soB;
             //b4. Xuất kết quả
             String strKQ = String.valueOf(Tru);
-            edtKQ.setText(strKQ);
+            tvKQ.setText(strKQ);
         }
     };
     View.OnClickListener boLangNgheVaXuLyNhan = new View.OnClickListener() {
@@ -94,42 +109,28 @@ public class MainActivity extends AppCompatActivity {
             double nhan = soA * soB;
             //b4. Xuất kết quả
             String strKQ = String.valueOf(nhan);
-            edtKQ.setText(strKQ);
+            tvKQ.setText(strKQ);
         }
     };
-//    View.OnClickListener boLangNgheVaXuLyChia = new View.OnClickListener() {
-//        @Override
-//        public void onClick(View v) {
-//            //Code xử lý Cộng
-//            //b1. Lấy số 1, 2
-//            String strSo1 = edtSoA.getText().toString();
-//            String strSo2 = edtSoB.getText().toString();
-//            //b1. Chuyển thành số để tính toán
-//            double soA = Double.parseDouble(strSo1);
-//            double soB = Double.parseDouble(strSo2);
-//            //b3. Tính toán
-//            double chia = soA / soB;
-//            //b4. Xuất kết quả
-//            String strKQ = String.valueOf(chia);
-//            edtKQ.setText(strKQ);
-//        }
-//    };
-    //----------------------------------------------------//
-    public void TimView() {
-        edtSoA = (EditText) findViewById(R.id.edtSo1);
-        edtSoB = (EditText) findViewById(R.id.edtSo2);
-        buttonCong = (Button) findViewById(R.id.btnCong);
-        buttonTru = (Button) findViewById(R.id.btnTru);
-        buttonNhan = (Button) findViewById(R.id.btnNhan);
-        buttonChia = (Button) findViewById(R.id.btnChia);
-        edtKQ = (EditText) findViewById(R.id.edtKetQua);
-    }
-    //Khai báo các đối tượng tương ứng với các điều khiển (view) cần thao tác
-    EditText edtSoA;
-    EditText edtSoB;
-    Button buttonCong, buttonTru, buttonNhan, buttonChia;
-    EditText edtKQ;
-    //----------------------------------------------------//
+    View.OnClickListener boLangNgheVaXuLyChia = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //Code xử lý Cộng
+            //b1. Lấy số 1, 2
+            String strSo1 = edtSoA.getText().toString();
+            String strSo2 = edtSoB.getText().toString();
+            //b1. Chuyển thành số để tính toán
+            double soA = Double.parseDouble(strSo1);
+            double soB = Double.parseDouble(strSo2);
+            //b3. Tính toán
+            double chia = soA / soB;
+            //b4. Xuất kết quả
+            String strKQ = String.valueOf(chia);
+            tvKQ.setText(strKQ);
+        }
+    };
+    //-------------------------------------------------------------------------//
+
 
 
 }
