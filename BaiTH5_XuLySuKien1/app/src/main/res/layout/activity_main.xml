@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:padding="6dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số thứ nhất"
+            android:textSize="18dp"
+            android:textColor="#987"/>
+        <EditText
+            android:id="@+id/edtSo1"
+            android:layout_marginBottom="4.5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mời nhập vào chữ số tại đây"
+            android:textSize="12dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:padding="6dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="50dp">
+        <TextView
+            android:paddingRight="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số thứ hai"
+            android:textSize="18dp"
+            android:textColor="#987"/>
+        <EditText
+            android:id="@+id/edtSo2"
+            android:layout_marginBottom="4.5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mời nhập vào chữ số tại đây"
+            android:textSize="12dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:padding="6dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="50dp">
+
+        <Button
+            android:id="@+id/btnCong"
+            android:layout_marginHorizontal="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:onClick="xuLyCong"/>
+        <Button
+            android:id="@+id/btnTru"
+            android:layout_marginHorizontal="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:onClick="xuLyTru"/>
+        <Button
+            android:id="@+id/btnNhan"
+            android:layout_marginHorizontal="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:onClick="xuLyNhan"/>
+        <Button
+            android:id="@+id/btnChia"
+            android:layout_marginHorizontal="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:onClick="xuLyChia"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:padding="6dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="50dp">
+        <TextView
+            android:paddingRight="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kết quả là"
+            android:textSize="18dp"
+            android:textColor="#987"/>
+        <EditText
+            android:id="@+id/edtKetQua"
+            android:layout_marginBottom="4.5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nơi hiện kết quả"
+            android:textSize="12dp"
+            android:enabled="false"/>
+    </LinearLayout>
+
+</LinearLayout>
