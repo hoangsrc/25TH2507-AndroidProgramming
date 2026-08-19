@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //Tìm view
         TimView();
-        // Gắn các bộ lắng ghe
+        // Gắn các bộ lắng ghe cho các nút
         buttonCong.setOnClickListener(boLangNgheVaXuLyCong);
         buttonTru.setOnClickListener(boLangNgheVaXuLyTru);
         buttonNhan.setOnClickListener(boLangNgheVaXuLyNhan);
