@@ -1,8 +1,11 @@
 package ntu.minhhoangg.baith7_listview1;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +17,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    ArrayList<String> dsTenTinhThanhVN; //Khai báo (-- Đã chuyển từ onCreate ra ngoài)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
         // ?? Từ đâu có: Từ cơ sở dữ liệu (SQL, noSQL, XML,...)
         //Ở bài này chúng ta hard-code dữ liệu trực tiếp
         //Cần biến phù hợp để chứa dữ liệu
-
-        ArrayList<String> dsTenTinhThanhVN; //Khai báo
+        //--------------------------------------
         dsTenTinhThanhVN = new ArrayList<String>(); //Tạo thể hiện cụ thể, Xin mới
             //Thêm dữ liệu ở đây (đúng ra, ta phải đọc từ một nguồn nào đó)
             //Nhưng ta hard-code (cho sẵn để demo)
@@ -52,8 +55,30 @@ public class MainActivity extends AppCompatActivity {
         // 3.2 Gắn
         lvTenTinhThanh.setAdapter(adapterTinhThanh);
         // 3.3 Lắng nghe và xử lý sự kiện người dùng tương tác
-        //Để sau
+        lvTenTinhThanh.setOnItemClickListener(boLangNgheVaXuLy);
+
 
 
     }
+    //Tạo bộ lắng nghe và xử lý sự kiện onItemClick, đặt vào một biến
+    //Vd: boLangNgheVaXuLy
+        AdapterView.OnItemClickListener boLangNgheVaXuLy = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            //Code xử lý ở đây
+            //i là vị trí phần tử vừa được Tương tác
+            //Ví dụ xử lý ở đây, là hiện lên màn hình một thông báo nhanh về vị trí của phần tử vừa chọn
+            //Ví dụ khác, thay vì hiện ví trị hiện của của phần tử thì ta hiện giá trị
+                //Lấy giá trị ở phần tử thứ i
+            String strTenTinhChon = dsTenTinhThanhVN.get(i);
+            Toast.makeText(MainActivity.this,strTenTinhChon,Toast.LENGTH_LONG).show();  //Trước show chỉ là make text thôi, (.show() thì mới show ra)
+
+
+
+//            Toast.makeText(MainActivity.this,"Bạn vừa chọn:"+String.valueOf(i),Toast.LENGTH_LONG).show();  //Trước show chỉ là make text thôi, (.show() thì mới show ra)
+
+        }
+    };
+
+
 }
